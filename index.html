@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Membuat komentar yang dinamis</title>
+  </head>
+  <body>
+    <h1>Komentar yang dinamis</h1>
+    <form>
+      <label for="username"> Username </label>
+      <input type="text" id="username" placeholder="Masukkan username kamu" autocomplete="off" />
+      <label for="komentar"> Komentar </label>
+      <textarea id="komentar" cols="30" rows="8" placeholder="Masukkan komentar kamu"></textarea>
+      <label>Pilih avatar:</label>
+      <input type="file" id="avatar" accept="image/*" />
+      <div class="tombol">
+        <div class="spinner-loading">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M18.364 5.636L16.95 7.05A7 7 0 1 0 19 12h2a9 9 0 1 1-2.636-6.364z" fill="rgba(255,255,255,1)" />
+          </svg>
+        </div>
+        <input type="submit" value="Kirim" id="kirim" />
+      </div>
+    </form>
+    <div class="catatan">
+      <h4>Catatan:</h4>
+      <p>Apabila username kosong, akan diisi dengan username random.</p>
+      <p>Apabila tidak memilih avatar, akan diisi dengan avatar random</p>
+      <p>Komentar wajib diisi</p>
+    </div>
+    <h2>Komentar</h2>
+    <button id="btnClearAll">Hapus semua</button>
+    <div class="container">
+      <div class="container-komen" id="active-komen">
+        <img src="luffy.jpg" alt="" />
+        <div class="hasilKomentar">
+          <p class="tampilUsername">Rian</p>
+          <p class="tampilKomentar">Makasih banget materinya bang, keren-keren deh materi nya :)</p>
+        </div>
+        <img src="close-line.svg" class="btnClose" />
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

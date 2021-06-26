@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 0 20px;
+}
+
+h1 {
+  text-align: center;
+  position: relative;
+  margin-top: 40px;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  background-color: #333;
+  width: 100px;
+  height: 4px;
+  position: absolute;
+  margin-top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+form {
+  margin: 80px auto 0;
+  padding: 20px;
+  width: 600px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-radius: 8px;
+}
+
+form label {
+  color: #333;
+}
+
+form :is(input, textarea):not(#kirim) {
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  border: 2px solid #333;
+  position: relative;
+  letter-spacing: 0.7px;
+  color: rgb(54, 54, 54);
+  border-radius: 4px;
+}
+
+form #avatar {
+  cursor: pointer;
+}
+
+form textarea {
+  font-family: Arial;
+  resize: none;
+}
+
+form .tombol {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+form .tombol #kirim,
+form .tombol .spinner-loading {
+  padding: 6px 8px;
+  width: 100px;
+  border: none;
+  border-radius: 4px;
+  letter-spacing: 0.4px;
+  font-weight: bold;
+  background-color: rgb(27, 106, 253);
+  color: #fff;
+  margin: 10px auto 0;
+  cursor: pointer;
+  transition: background-color 300ms ease-out;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 35px;
+}
+
+form .tombol .spinner-loading {
+  display: none;
+}
+
+form .tombol .spinner-loading svg {
+  animation: spinner 1s linear infinite;
+}
+
+form .tombol #kirim:hover,
+form .tombol .spinner-loading:hover {
+  background-color: rgb(7, 81, 218);
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes muncul {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+h2 {
+  margin: 80px auto 0;
+  width: 600px;
+  border-bottom: 2px solid #333;
+  letter-spacing: 1px;
+  font-size: 2em;
+}
+
+.container {
+  margin: 30px auto;
+  width: 700px;
+  border: 1px solid #000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.container .container-komen {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.container .container-komen img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.container .container-komen .hasilKomentar {
+  width: 100%;
+}
+
+.container .container-komen .tampilUsername {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
+
+.container .container-komen .tampilKomentar {
+  overflow: hidden;
+}
+
+.container .container-komen .btnClose {
+  background-color: rgb(247, 23, 23);
+  color: #fff;
+  font-weight: bold;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: -5px;
+  right: -8px;
+}
+
+.container .container-komen .btnClose img {
+  width: 22px;
+  height: 22px;
+}
+
+.container .container-komen .btnClose:hover {
+  background-color: rgb(218, 29, 22);
+}
+
+.catatan {
+  margin: 40px auto 0;
+  text-align: center;
+  color: #333;
+  letter-spacing: 0.5px;
+  display: flex;
+  font-weight: bold;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.catatan p {
+  color: red;
+}
+
+#btnClearAll {
+  padding: 6px 8px;
+  border: none;
+  border-radius: 4px;
+  letter-spacing: 0.4px;
+  font-weight: bold;
+  background-color: rgb(253, 27, 27);
+  color: #fff;
+  margin: 30px auto 0;
+  cursor: pointer;
+  transition: background-color 300ms ease-out;
+  font-size: 14px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#btnClearAll:hover {
+  background-color: rgb(223, 10, 10);
+}
+
+@media (max-width: 740px) {
+  .container,
+  form,
+  h2 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .container .container-komen {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
+}
